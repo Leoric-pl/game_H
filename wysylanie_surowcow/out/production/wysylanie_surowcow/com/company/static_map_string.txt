@@ -1,0 +1,21 @@
+20 20
+empty____ castle___ empty____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____ castle___ empty____
+empty____ road_____ road_____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ empty____ road_____ road_____ empty____
+empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____
+empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ road_____ road_____ road_____ empty____ empty____
+empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ road_____ road_____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ road_____ road_____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ road_____ road_____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ road_____ road_____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____
+Wall____W Wall____W Wall____W Wall____W Wall____W Wall____W road_____ Wall____W Wall____W Wall____W Wall____W Wall____W Wall____W Wall____W road_____ Wall____W Wall____W Wall____W Wall____W Wall____W
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ road_____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ road_____ road_____ road_____ road_____ road_____ road_____ road_____ road_____ road_____ road_____ empty____ empty____ empty____ empty____
+empty____ empty____ empty____ empty____ road_____ road_____ road_____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ road_____ road_____ empty____ empty____ empty____
+empty____ empty____ road_____ road_____ road_____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ road_____ empty____ empty____ empty____
+empty____ road_____ road_____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ road_____ road_____ road_____ empty____
+empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____ Wall____W empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____ empty____
