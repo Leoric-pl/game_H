@@ -1,14 +1,22 @@
-package com.company;
+package files_0;
 
-public class Hero {
+public class City {
+    int poz_x, poz_y;
     int wood_amount;
     int gold_amount;
     int crystal_amount;
-    int poz_x, poz_y;
+    int ownerteam = 0;
+    int ownerplayer = 0;
+    String name;
 
-    Hero(int starting_poz_x, int starting_poz_y) {
-        this.poz_x = starting_poz_x;
-        this.poz_y = starting_poz_y;
+    City(int poz_x, int poz_y, String name) {
+        this.poz_x = poz_x;
+        this.poz_y = poz_y;
+        this.name = name;
+    }
+
+    String getCityName() {
+        return name;
     }
 
     void add_wood(int amount) {
@@ -51,4 +59,12 @@ public class Hero {
         return amount;
     }
 
+    void addpackage(int destination_time, String kind, int value) {
+        Package_reinforce package_player1 = new Package_reinforce(destination_time, kind, value);
+    }
+
+    void changeOwner(int teamnumber, int playernumber) {
+        this.ownerplayer = playernumber;
+        this.ownerteam = teamnumber;
+    }
 }

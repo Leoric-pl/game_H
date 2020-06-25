@@ -1,9 +1,9 @@
-package com.company;
+package files_0;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static com.company.Main.neutralcities;
+import static files_0.Main.neutralcities;
 
 class Loadmap {
 
@@ -29,8 +29,8 @@ private int castle7=107;
      koniec przypisania */
     static int HEIGHT,WIDTH;
     void load_static() throws FileNotFoundException {
-    File satatic_map = new File("D:\\Documents\\Studia\\2sem\\game_H\\wysylanie_surowcow\\src\\com\\company\\static_map_int.txt");
-  //  File dynamic_map = new File("D:\\Documents\\Studia\\2sem\\game_H\\wysylanie_surowcow\\src\\com\\company\\dynamic_map.txt");
+    File satatic_map = new File("src\\files_0\\static_map_int.txt");
+  //  File dynamic_map = new File("src\\files_0\\dynamic_map.txt");
         Scanner basic = new Scanner(satatic_map);
       //  Scanner actual=new Scanner(dynamic_map);
         HEIGHT = basic.nextInt();

@@ -1,8 +1,5 @@
-package com.company;
+package files_0;
 
-
-import static com.company.Loadmap.HEIGHT;
-import static com.company.Loadmap.WIDTH;
 
 public class Map {
    /* public Map(int HEIGHT, int WIDTH)
@@ -10,12 +7,12 @@ public class Map {
         Field map[][]=new Field[HEIGHT][WIDTH];
 
     }*/
-    Field map[][]=new Field[HEIGHT][WIDTH];
+    Field map[][]=new Field[Loadmap.HEIGHT][Loadmap.WIDTH];
 
     public void showmap() {
-        for(int i=0;i<HEIGHT;i++)
+        for(int i = 0; i< Loadmap.HEIGHT; i++)
         {
-            for(int j=0;j<WIDTH;j++)
+            for(int j = 0; j< Loadmap.WIDTH; j++)
             {System.out.print(map[i][j]+"  ");}
             System.out.println();
         }
