@@ -15,7 +15,7 @@ class Team {
         players.add(new Player(PlayerName, PlayerID));
     }
 
-    Player GetPlayer(int PlayerIndex) {
+    Player getPlayer(int PlayerIndex) {
         return players.get(PlayerIndex);
     }
 }
