@@ -17,8 +17,8 @@ public class Player {
     static List<Hero> heroes = new ArrayList<>();
     static List<City> cities = new ArrayList<>();
 
-    void AddHero() {
-        heroes.add(new Hero(1, 2));
+    void AddHero(int starting_poz_x, int starting_poz_y) {
+        heroes.add(new Hero(starting_poz_x, starting_poz_y));
     }
 
     Hero GetHero(int index_of_hero) {

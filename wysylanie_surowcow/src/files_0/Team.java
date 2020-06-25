@@ -18,7 +18,9 @@ class Team {
     Player getPlayer(int PlayerIndex) {
         return players.get(PlayerIndex);
     }
-    void removePlayer(int playerIndex)
-    {players.remove(getPlayer(playerIndex));}
+
+    void removePlayer(int playerIndex) {
+        players.remove(getPlayer(playerIndex));
+    }
 
 }

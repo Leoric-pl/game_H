@@ -6,17 +6,16 @@ public class Main {
 
     static List <City> neutralcities= new ArrayList<>();
     static List <Team> teams= new ArrayList<>();
-
     public static void main(String[] args) throws FileNotFoundException {
         teams.add(new Team("Neutral"));
         teams.add(new Team("Red"));
         teams.add(new Team("Blue"));
         teams.get(0).addplayer("Neutral",0);
-        teams.get(1).addplayer("Player0",0);
-        teams.get(2).addplayer("Player1",0);
-        teams.get(2).addplayer("Player2",0);
-        teams.get(1).getPlayer(0).AddHero();
-        teams.get(1).getPlayer(0).AddHero();
+        teams.get(1).addplayer("Player0",1);
+        teams.get(2).addplayer("Player1",2);
+        teams.get(2).addplayer("Player2",3);
+        teams.get(1).getPlayer(1).AddHero(1,2);
+        teams.get(1).getPlayer(1).AddHero(2,3);
 
         Loadmap loadmap=new Loadmap();
         loadmap.load_static();
@@ -45,7 +44,7 @@ private static void show(){
 private  static  void loop()
 {
     for(int i=0;i<3;i++)
-    if(teams.get(2).getPlayer(0)!=null)
+    if(teams.get(2).getPlayer(i)!=null)
     System.out.println(teams.get(2).getPlayer(i).getName());
 }
 }
