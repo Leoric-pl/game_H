@@ -21,9 +21,9 @@ class Giving {
     /**                                             sending-optional***************************************************/
 //    static void sendGoldToCity(City city_giving,City city_taking,int amount)
 //    {
-//        amount=city_giving.subtract_gold(amount);
+//        amount=city_giving.subtractGold(amount);
 //        int way=abs((city_taking.poz_y)-(city_giving.poz_y))+abs((city_taking.poz_x)-(city_giving.poz_x));
-//        city_taking.addpackage(current_turn+way,"gold",amount);
+//        city_taking.addPackage(current_turn+way,"gold",amount);
 //    }
 //
 //    static void sendWoodToCity(City city_giving,City city_taking,int amount)
@@ -33,9 +33,9 @@ class Giving {
 //        city_taking.addPackage(current_turn+way,"wood",amount);
 //    }
 //
-//    static void send_crystal_to_city(City city_giving,City city_taking,int amount)
+//    static void sendCrystalToCity(City city_giving,City city_taking,int amount)
 //    {
-//        amount=city_giving.subtract_crystal(amount);
+//        amount=city_giving.subtractCrystal(amount);
 //        int way=abs((city_taking.poz_y)-(city_giving.poz_y))+abs((city_taking.poz_x)-(city_giving.poz_x));
 //        city_taking.addPackage(current_turn+way,"crystal",amount);
 //    }

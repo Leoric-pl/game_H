@@ -60,7 +60,7 @@ public class City {
     }
 
     void addPackage(int destination_time, String kind, int value) {
-        Package_reinforce package_player1 = new Package_reinforce(destination_time, kind, value);
+        PackageReinforce package_player1 = new PackageReinforce(destination_time, kind, value);
     }
 
     void changeOwner(int teamnumber, int playernumber) {

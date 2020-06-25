@@ -8,13 +8,13 @@ import static files_0.Main.neutralCities;
 class Loadmap {
 
     /**
-    do zinterpretowania:
-     0-  puste pole,
-     1- droga,modyfikatoor: 0.5
-     2- przeszkoda nie do przejscia
-     3- kopalnia zlota, podstawowe poza miastem zrodlo przychodu, 1000 dziannie
-     4- farma, zrodlo podstawowych surwcow,10 dziennie
-     5- kopalnia krysztalow, 1 dziennie
+    basic:
+     0-  empty field,
+     1- road, modifier: 0.5
+     2- wall with no place to go
+     3- gold mine, 1000 income
+     4- farm, basic sources resource, 10/day
+     5- crystal mine, 1 /day
             */
     private int empty=0;
     private int road=1;
