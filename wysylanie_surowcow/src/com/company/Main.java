@@ -29,6 +29,9 @@ public class Main {
         Giving.give_gold_to_city(teams.get(0).getPlayer(0).GetHero(0),neutralcities.get(0), zmienna +50);
         show();
         loop();
+        teams.get(1).removePlayer(2);
+        System.out.println();
+        loop();
 
 
     }
@@ -40,8 +43,9 @@ private static void show(){
 
 }
 private  static  void loop()
-{System.out.println(teams.get(2).getPlayer(0).getName());
-    System.out.println(teams.get(2).getPlayer(1).getName());
-    System.out.println(teams.get(2).getPlayer(2).getName());
-    System.out.println(teams.get(2).getPlayer(3).getName());}
+{
+    for(int i=0;i<3;i++)
+    if(teams.get(2).getPlayer(0)!=null)
+    System.out.println(teams.get(2).getPlayer(i).getName());
+}
 }
