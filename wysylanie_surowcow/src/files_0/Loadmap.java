@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static files_0.Main.neutralcities;
+import static files_0.Main.neutralCities;
 
 class Loadmap {
 
@@ -50,12 +50,12 @@ private int castle7=107;
                 else if(data_to_load==crystal_mine)                           {firstmap.map[i][j]=Field.crystal_mine;}
                 else if(data_to_load==farm)                                   {firstmap.map[i][j]=Field.farm_____;}
                 else if(data_to_load>=castle0&&data_to_load<=castle7)         {firstmap.map[i][j]=Field.castle___;
-                neutralcities.add(new City(i,j,i+"City"+j));
+                neutralCities.add(new City(i,j,i+"City"+j));
                 }
             }
         }
         firstmap.showmap();
     }
-    void load_setup()
+    void loadSetup()
     {System.out.print("On static map numbers mean");}
 }

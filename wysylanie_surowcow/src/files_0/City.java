@@ -19,11 +19,11 @@ public class City {
         return name;
     }
 
-    void add_wood(int amount) {
+    void addWood(int amount) {
         wood_amount += amount;
     }
 
-    int subtract_wood(int amount) {
+    int subtractWood(int amount) {
         if (wood_amount >= amount)
             wood_amount -= amount;
         else {
@@ -33,11 +33,11 @@ public class City {
         return amount;
     }
 
-    void add_gold(int amount) {
+    void addGold(int amount) {
         gold_amount += amount;
     }
 
-    int subtract_gold(int amount) {
+    int subtractGold(int amount) {
         if (gold_amount >= amount) gold_amount -= amount;
         else {
             amount = gold_amount;
@@ -46,11 +46,11 @@ public class City {
         return amount;
     }
 
-    void add_crystal(int amount) {
+    void addCrystal(int amount) {
         crystal_amount += amount;
     }
 
-    int subtract_crystal(int amount) {
+    int subtractCrystal(int amount) {
         if (crystal_amount >= amount) crystal_amount -= amount;
         else {
             amount = crystal_amount;
@@ -59,7 +59,7 @@ public class City {
         return amount;
     }
 
-    void addpackage(int destination_time, String kind, int value) {
+    void addPackage(int destination_time, String kind, int value) {
         Package_reinforce package_player1 = new Package_reinforce(destination_time, kind, value);
     }
 

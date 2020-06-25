@@ -21,11 +21,11 @@ public class Player {
         heroes.add(new Hero(starting_poz_x, starting_poz_y));
     }
 
-    Hero GetHero(int index_of_hero) {
+    Hero getHero(int index_of_hero) {
         return heroes.get(index_of_hero);
     }
 
-    City GetCity(int index_of_city) {
+    City getCity(int index_of_city) {
         return cities.get(index_of_city);
     }
     String getName()
