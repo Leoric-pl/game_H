@@ -7,9 +7,11 @@ public class Hero {
     int pozX, pozY;
     final int maxMove=15;
     int currentMove=0;
+    BattleUnit battleUnit=new BattleUnit();
     Hero(int startingPozX, int startingPozY) {
         this.pozX = startingPozX;
         this.pozY = startingPozY;
+        battleUnit.setSizeOfUnit();
     }
 
     void addWood(int amount) {

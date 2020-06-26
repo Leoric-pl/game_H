@@ -4,6 +4,9 @@ import static files_0.Main.neutralCities;
 import static files_0.Main.teams;
 
 public class Turn {
+
+
+
 /*******************************************************testy**************************************************************/
    void basicTurn0(int teamIndex,int playerIndex)
     {

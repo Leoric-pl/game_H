@@ -77,5 +77,6 @@ public class City {
     levelOfCity++;}
     else System.out.println("not enough gold");
     }
+    void buyUnit(){}
 
 }
