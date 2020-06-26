@@ -1,52 +1,53 @@
 package files_0;
 
 public class Hero {
-    int wood_amount;
-    int gold_amount;
-    int crystal_amount;
-    int poz_x, poz_y;
-
-    Hero(int starting_poz_x, int starting_poz_y) {
-        this.poz_x = starting_poz_x;
-        this.poz_y = starting_poz_y;
+    int woodAmount;
+    int goldAmount;
+    int crystalAmount;
+    int pozX, pozY;
+    final int maxMove=15;
+    int currentMove=0;
+    Hero(int startingPozX, int startingPozY) {
+        this.pozX = startingPozX;
+        this.pozY = startingPozY;
     }
 
     void addWood(int amount) {
-        wood_amount += amount;
+        woodAmount += amount;
     }
 
     int subtractWood(int amount) {
-        if (wood_amount >= amount)
-            wood_amount -= amount;
+        if (woodAmount >= amount)
+            woodAmount -= amount;
         else {
-            amount = wood_amount;
-            wood_amount = 0;
+            amount = woodAmount;
+            woodAmount = 0;
         }
         return amount;
     }
 
     void addGold(int amount) {
-        gold_amount += amount;
+        goldAmount += amount;
     }
 
     int subtractGold(int amount) {
-        if (gold_amount >= amount) gold_amount -= amount;
+        if (goldAmount >= amount) goldAmount -= amount;
         else {
-            amount = gold_amount;
-            gold_amount = 0;
+            amount = goldAmount;
+            goldAmount = 0;
         }
         return amount;
     }
 
     void addCrystal(int amount) {
-        crystal_amount += amount;
+        crystalAmount += amount;
     }
 
     int subtractCrystal(int amount) {
-        if (crystal_amount >= amount) crystal_amount -= amount;
+        if (crystalAmount >= amount) crystalAmount -= amount;
         else {
-            amount = crystal_amount;
-            crystal_amount = 0;
+            amount = crystalAmount;
+            crystalAmount = 0;
         }
         return amount;
     }

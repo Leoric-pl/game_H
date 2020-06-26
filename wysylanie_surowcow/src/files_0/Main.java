@@ -22,8 +22,13 @@ public class Main {
         teams.get(1).getPlayer(0).AddHero(2, 3);
 
         Loadmap loadmap = new Loadmap();
-        loadmap.load_static();
+        loadmap.loadStatic();
         test3();
+        Turn turn=new Turn();
+        turn.basicTurn0(1,0);
+        test();
+        turn.basicTurn1(1,0);
+        turn.basicTurn1(1,0);
     }
 
 
@@ -37,32 +42,36 @@ public class Main {
 
     }
     /***********************************to tests:*********************/
+    private static void test()
+    {
+        show();
+        test1();
+        show();
+    test2();
+    show();
+    test3();
+    }
     private static void test1() {
         int zmienna = 3;
-        teams.get(0).getPlayer(0).getHero(0).addGold(zmienna * 5);
-        Giving.giveGoldToCity(teams.get(0).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 1);
-        Giving.giveGoldToCity(teams.get(0).getPlayer(0).getHero(0), neutralCities.get(1), zmienna - 1);
+        teams.get(1).getPlayer(0).getHero(0).addGold(zmienna * 5);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 1);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(1), zmienna - 1);
     }
 
     private static void test2() {
         int zmienna = 3;
-        Giving.giveGoldToCity(teams.get(0).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 50);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 50);
     }
     private static void show() {
-        System.out.println("bo1:" + teams.get(0).getPlayer(0).getHero(0).gold_amount);
-        System.out.println("ci1:" + neutralCities.get(0).gold_amount);
-        System.out.println("ci2:" + neutralCities.get(1).gold_amount);
+        System.out.println("bo1:" + teams.get(1).getPlayer(0).getHero(0).goldAmount);
+        System.out.println("ci1:" + neutralCities.get(0).goldAmount);
+        System.out.println("ci2:" + neutralCities.get(1).goldAmount);
         System.out.println();
     }
     private static void test3(){
         System.out.println(neutralCities.get(0).name);
         System.out.println(neutralCities.get(1).name);
-        System.out.println(teams.get(neutralCities.get(0).ownerteam).getPlayer(neutralCities.get(0).ownerplayer).name);
-        System.out.println(teams.get(neutralCities.get(1).ownerteam).getPlayer(neutralCities.get(1).ownerplayer).name);
-        neutralCities.get(0).changeOwner(1,0);
-        System.out.println(neutralCities.get(0).ownerteam);
-        System.out.println(neutralCities.get(0).ownerplayer);
-        System.out.println(teams.get(neutralCities.get(0).ownerteam).getPlayer(neutralCities.get(0).ownerplayer).name);
-        System.out.println(teams.get(neutralCities.get(1).ownerteam).getPlayer(neutralCities.get(1).ownerplayer).name);
+        System.out.println(teams.get(neutralCities.get(0).ownerTeam).getPlayer(neutralCities.get(0).ownerPlayer).name);
+        System.out.println(teams.get(neutralCities.get(1).ownerTeam).getPlayer(neutralCities.get(1).ownerPlayer).name);
     }
 }

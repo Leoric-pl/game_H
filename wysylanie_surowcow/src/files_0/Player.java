@@ -5,8 +5,6 @@ import java.util.List;
 
 public class Player {
     int PlayerID;
-    static final int basic_max_move=15;
-    int move_left=0;
 
     Player(String name, int PlayerID) {
         this.name = name;
@@ -14,19 +12,18 @@ public class Player {
     }
 
     String name;
-    static List<Hero> heroes = new ArrayList<>();
-   // static List<City> cities = new ArrayList<>();
+    List<Hero> heroes = new ArrayList<>();
 
-    void AddHero(int starting_poz_x, int starting_poz_y) {
-        heroes.add(new Hero(starting_poz_x, starting_poz_y));
+    void AddHero(int startingPozX, int startingPozY) {
+        heroes.add(new Hero(startingPozX, startingPozY));
     }
 
-    Hero getHero(int index_of_hero) {
-        return heroes.get(index_of_hero);
+    Hero getHero(int indexOfHero) {
+        return heroes.get(indexOfHero);
     }
 
-  //  City getCity(int index_of_city) {
-   //     return cities.get(index_of_city);}
+  //  City getCity(int indexOfCity) {
+   //     return cities.get(indexOfCity);}
     String getName()
     {return name;}
 

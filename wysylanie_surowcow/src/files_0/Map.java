@@ -9,7 +9,7 @@ public class Map {
     }*/
     Field map[][]=new Field[Loadmap.HEIGHT][Loadmap.WIDTH];
 
-    public void showmap() {
+    public void showMap() {
         for(int i = 0; i< Loadmap.HEIGHT; i++)
         {
             for(int j = 0; j< Loadmap.WIDTH; j++)

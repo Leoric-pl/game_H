@@ -13,31 +13,31 @@ class Giving {
         hero.addGold(amount);
     }
 
-    static void giveGoldToHero(Hero hero_giving,Hero hero_taking,int amount)
+    static void giveGoldToHero(Hero heroGiving,Hero heroTaking,int amount)
     {
-        amount=hero_giving.subtractGold(amount);
-        hero_taking.addGold(amount);
+        amount=heroGiving.subtractGold(amount);
+        heroTaking.addGold(amount);
     }
     /**                                             sending-optional***************************************************/
-//    static void sendGoldToCity(City city_giving,City city_taking,int amount)
+//    static void sendGoldToCity(City cityGiving,City cityTaking,int amount)
 //    {
-//        amount=city_giving.subtractGold(amount);
-//        int way=abs((city_taking.poz_y)-(city_giving.poz_y))+abs((city_taking.poz_x)-(city_giving.poz_x));
-//        city_taking.addPackage(current_turn+way,"gold",amount);
+//        amount=cityGiving.subtractGold(amount);
+//        int way=abs((cityTaking.pozY)-(cityGiving.pozY))+abs((cityTaking.pozX)-(cityGiving.pozX));
+//        cityTaking.addPackage(currentTurn+way,"gold",amount);
 //    }
 //
-//    static void sendWoodToCity(City city_giving,City city_taking,int amount)
+//    static void sendWoodToCity(City cityGiving,City cityTaking,int amount)
 //    {
-//        amount=city_giving.subtractWood(amount);
-//        int way=abs((city_taking.poz_y)-(city_giving.poz_y))+abs((city_taking.poz_x)-(city_giving.poz_x));
-//        city_taking.addPackage(current_turn+way,"wood",amount);
+//        amount=cityGiving.subtractWood(amount);
+//        int way=abs((cityTaking.pozY)-(cityGiving.pozY))+abs((cityTaking.pozX)-(cityGiving.pozX));
+//        cityTaking.addPackage(currentTurn+way,"wood",amount);
 //    }
 //
-//    static void sendCrystalToCity(City city_giving,City city_taking,int amount)
+//    static void sendCrystalToCity(City cityGiving,City cityTaking,int amount)
 //    {
-//        amount=city_giving.subtractCrystal(amount);
-//        int way=abs((city_taking.poz_y)-(city_giving.poz_y))+abs((city_taking.poz_x)-(city_giving.poz_x));
-//        city_taking.addPackage(current_turn+way,"crystal",amount);
+//        amount=cityGiving.subtractCrystal(amount);
+//        int way=abs((cityTaking.pozY)-(cityGiving.pozY))+abs((cityTaking.pozX)-(cityGiving.pozX));
+//        cityTaking.addPackage(currentTurn+way,"crystal",amount);
 //    }
     /*******************************************************wood******************************************************/
     static void giveWoodToCity(Hero hero,City city,int amount)
@@ -45,10 +45,10 @@ class Giving {
         amount=hero.subtractWood(amount);
         city.addWood(amount);
     }
-    static void giveWoodToHero(Hero hero_giving,Hero hero_taking,int amount)
+    static void giveWoodToHero(Hero heroGiving,Hero heroTaking,int amount)
     {
-        amount=hero_giving.subtractWood(amount);
-        hero_taking.addWood(amount);
+        amount=heroGiving.subtractWood(amount);
+        heroTaking.addWood(amount);
     }
     static void giveWoodToHero(Hero hero,City city,int amount)
     {
@@ -62,10 +62,10 @@ class Giving {
        amount= hero.subtractCrystal(amount);
         city.addCrystal(amount);
     }
-    static void giveCrystalToHero(Hero hero_giving,Hero hero_taking,int amount)
+    static void giveCrystalToHero(Hero heroGiving,Hero heroTaking,int amount)
     {
-       amount= hero_giving.subtractCrystal(amount);
-        hero_taking.addCrystal(amount);
+       amount= heroGiving.subtractCrystal(amount);
+        heroTaking.addCrystal(amount);
     }
     static void giveCrystalToHero(Hero hero,City city,int amount)
     {

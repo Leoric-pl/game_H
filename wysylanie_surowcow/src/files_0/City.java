@@ -1,17 +1,18 @@
 package files_0;
 
 public class City {
-    int poz_x, poz_y;
-    int wood_amount;
-    int gold_amount;
-    int crystal_amount;
-    int ownerteam = 0;
-    int ownerplayer = 0;
+    int pozX, pozY;
+    int woodAmount;
+    int goldAmount;
+    int crystalAmount;
+    int goldIncome=0;
+    int ownerTeam = 0;
+    int ownerPlayer = 0;
     String name;
 
-    City(int poz_x, int poz_y, String name) {
-        this.poz_x = poz_x;
-        this.poz_y = poz_y;
+    City(int pozX, int pozY, String name) {
+        this.pozX = pozX;
+        this.pozY = pozY;
         this.name = name;
     }
 
@@ -20,51 +21,54 @@ public class City {
     }
 
     void addWood(int amount) {
-        wood_amount += amount;
+        woodAmount += amount;
     }
 
     int subtractWood(int amount) {
-        if (wood_amount >= amount)
-            wood_amount -= amount;
+        if (woodAmount >= amount)
+            woodAmount -= amount;
         else {
-            amount = wood_amount;
-            wood_amount = 0;
+            amount = woodAmount;
+            woodAmount = 0;
         }
         return amount;
     }
 
     void addGold(int amount) {
-        gold_amount += amount;
+        goldAmount += amount;
     }
 
     int subtractGold(int amount) {
-        if (gold_amount >= amount) gold_amount -= amount;
+        if (goldAmount >= amount) goldAmount -= amount;
         else {
-            amount = gold_amount;
-            gold_amount = 0;
+            amount = goldAmount;
+            goldAmount = 0;
         }
         return amount;
     }
 
     void addCrystal(int amount) {
-        crystal_amount += amount;
+        crystalAmount += amount;
     }
 
     int subtractCrystal(int amount) {
-        if (crystal_amount >= amount) crystal_amount -= amount;
+        if (crystalAmount >= amount) crystalAmount -= amount;
         else {
-            amount = crystal_amount;
-            crystal_amount = 0;
+            amount = crystalAmount;
+            crystalAmount = 0;
         }
         return amount;
     }
 
-    void addPackage(int destination_time, String kind, int value) {
-        PackageReinforce package_player1 = new PackageReinforce(destination_time, kind, value);
+    void addPackage(int destinationTime, String kind, int value) {
+        PackageReinforce packagePlayer1 = new PackageReinforce(destinationTime, kind, value);
     }
 
-    void changeOwner(int teamnumber, int playernumber) {
-        this.ownerplayer = playernumber;
-        this.ownerteam = teamnumber;
+    void changeOwner(int teamNumber, int playerNumber) {
+        this.ownerPlayer = playerNumber;
+        this.ownerTeam = teamNumber;
     }
+    void increaseLevelOfCity()
+    {goldIncome+=1000;}
+
 }

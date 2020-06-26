@@ -1,11 +1,11 @@
 package files_0;
 
 public class PackageReinforce {
-    private int destination_time;
+    private int destinationTime;
     private String kind;
     private int value;
-    PackageReinforce(int destination_time, String kind, int value){
-        this.destination_time=destination_time;
+    PackageReinforce(int destinationTime, String kind, int value){
+        this.destinationTime=destinationTime;
         this.kind=kind;
         this.value=value;
     }
