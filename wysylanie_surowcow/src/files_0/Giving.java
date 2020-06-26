@@ -18,7 +18,7 @@ class Giving {
         amount=heroGiving.subtractGold(amount);
         heroTaking.addGold(amount);
     }
-    /**                                             sending-optional***************************************************/
+    /***********************************************sending-optional***************************************************/
 //    static void sendGoldToCity(City cityGiving,City cityTaking,int amount)
 //    {
 //        amount=cityGiving.subtractGold(amount);

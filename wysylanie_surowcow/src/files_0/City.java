@@ -5,9 +5,10 @@ public class City {
     int woodAmount;
     int goldAmount;
     int crystalAmount;
-    int goldIncome=0;
+    int goldIncome=500;
     int ownerTeam = 0;
     int ownerPlayer = 0;
+    int levelOfCity=1;
     String name;
 
     City(int pozX, int pozY, String name) {
@@ -69,6 +70,12 @@ public class City {
         this.ownerTeam = teamNumber;
     }
     void increaseLevelOfCity()
-    {goldIncome+=1000;}
+    {if(goldAmount>=goldIncome*3)
+    {
+    goldAmount-=goldIncome*3;
+    goldIncome*=2;
+    levelOfCity++;}
+    else System.out.println("not enough gold");
+    }
 
 }

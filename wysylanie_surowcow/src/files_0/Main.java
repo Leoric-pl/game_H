@@ -27,8 +27,8 @@ public class Main {
         Turn turn=new Turn();
         turn.basicTurn0(1,0);
         test();
-        turn.basicTurn1(1,0);
-        turn.basicTurn1(1,0);
+        for(int i=0;i<10;i++)
+            turn.basicTurn1(1,0);
     }
 
 

@@ -19,9 +19,9 @@ class Loadmap {
     private int empty=0;
     private int road=1;
     private int wall=2;
-    private int gold_mine=3;
+    private int goldMine=3;
     private int farm=4;
-    private int crystal_mine=5;
+    private int crystalMine=5;
     private int castle0=100;
 //    int castle1=101,castle2=102, castle3=103, castle4=104, castle5=105, castle6=106;
 private int castle7=107;
@@ -46,8 +46,8 @@ private int castle7=107;
                 if(DataToLoad==empty)                                       {firstmap.map[i][j]=Field.empty____;}
                 else if(DataToLoad==road)                                   {firstmap.map[i][j]=Field.road_____;}
                 else if(DataToLoad==wall)                                   {firstmap.map[i][j]=Field.wall____W;}
-                else if(DataToLoad==gold_mine)                              {firstmap.map[i][j]=Field.gold_mine;}
-                else if(DataToLoad==crystal_mine)                           {firstmap.map[i][j]=Field.crystal_mine;}
+                else if(DataToLoad==goldMine)                              {firstmap.map[i][j]=Field.gold_mine;}
+                else if(DataToLoad==crystalMine)                           {firstmap.map[i][j]=Field.crystal_mine;}
                 else if(DataToLoad==farm)                                   {firstmap.map[i][j]=Field.farm_____;}
                 else if(DataToLoad>=castle0&&DataToLoad<=castle7)         {firstmap.map[i][j]=Field.castle___;
                 neutralCities.add(new City(i,j,i+"City"+j));
