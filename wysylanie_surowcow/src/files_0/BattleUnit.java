@@ -102,7 +102,8 @@ public class BattleUnit {
     }
 
     void incrementAttackFrequency() {
-        attackFrequency += 0.1;
+       attackFrequency*=10;attackFrequency++;attackFrequency/=10;
+        // attackFrequency += 0.1;
     }
     /*********************************************hitPoints******************************************/
     double getHitPoints(){return hitPoints;}

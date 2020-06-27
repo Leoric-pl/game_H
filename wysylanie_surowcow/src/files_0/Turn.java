@@ -49,7 +49,9 @@ public class Turn {
 
         teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackOfUnit();
         showstats(teamIndex,playerIndex);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackOfUnit();
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
         showstats(teamIndex,playerIndex);
         teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
         showstats(teamIndex,playerIndex);
