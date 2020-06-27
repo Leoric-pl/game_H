@@ -79,7 +79,8 @@ public class City {
     {
     goldAmount-=goldIncome*3;
     goldIncome*=2;
-    levelOfCity++;}
+    levelOfCity++;
+    System.out.println("increased gold income to "+goldIncome);}
     else System.out.println("not enough gold");
     }
     void buyUnit(){}

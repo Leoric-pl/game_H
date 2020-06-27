@@ -21,6 +21,30 @@ public class BattleUnit {
             hireCostPerUnit = BASIC_MODIFIER * modifier;
         return hireCostPerUnit;
     }
+    double valueOfUnit()
+    {double valueOfUnit=countCostPerUnit()*getSizeOfUnit();
+    return valueOfUnit;}
+    double valueOfUpgradedUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
+    {double newCost= 1000000000;
+        if(param.equals("attack")||param.equals("defense"))
+    {double modifier;
+        if (getBasicAttack()+getBasicDefense()<1) modifier=(3+getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency()/2;
+        else modifier=(getBasicAttack()+1+getBasicDefense())*getHitPoints()*getAttackFrequency();
+        newCost= BASIC_MODIFIER * modifier*getSizeOfUnit();}
+        else if(param.equals("hitPoints"))
+    {double modifier;
+        if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*(getHitPoints()+1)*getAttackFrequency()/2;
+        else modifier=(getBasicAttack()+getBasicDefense())*(getHitPoints()+1)*getAttackFrequency();
+        newCost= BASIC_MODIFIER * modifier*getSizeOfUnit();}
+        else if(param.equals("attackFrequency")) {
+        double modifier;
+        if (getBasicAttack() + getBasicDefense() < 2)
+            modifier = (2 + getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+0.1) / 2;
+        else modifier = (getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+0.1);
+        newCost = BASIC_MODIFIER * modifier * getSizeOfUnit();}
+        return newCost;
+
+    }
 
     /*************************************size of unit*********************************************************************/
     void setSizeOfUnit() {

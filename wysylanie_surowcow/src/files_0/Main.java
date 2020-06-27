@@ -24,12 +24,15 @@ public class Main {
         Loadmap loadmap = new Loadmap();
         loadmap.loadStatic();
         test3();
-        Turn turn=new Turn();
-        turn.basicTurn0(1,0);
+        Turn turn = new Turn();
+        turn.basicTurn0(1, 0);
         test();
-        for(int i=0;i<10;i++)
-            turn.basicTurn1(1,0);
+        for (int i = 0; i < 10; i++)
+            turn.basicTurn1(1, 0);
+        turn.wait(1, 0);
+        turn.give(1,0);
     }
+
 
 
 

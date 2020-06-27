@@ -1,6 +1,7 @@
 package files_0;
 
 public class Hero {
+
     int woodAmount;
     int goldAmount;
     int crystalAmount;
@@ -53,5 +54,19 @@ public class Hero {
         }
         return amount;
     }
+    private void upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
+    {double OldCost=battleUnit.valueOfUnit();
+    double newCost=battleUnit.valueOfUpgradedUnit(param);
+        int cost=(int)(newCost-OldCost);
+        if(cost<=goldAmount)
+        {goldAmount-=cost;
+        battleUnit.incrementBasicAttack();}
+        else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);
+        }
+        void upgradeAttackOfUnit()
+        {upgradeOfBattleUnit("attack");}
+        void upgradeDefenseOfUnit(){upgradeOfBattleUnit("defense");}
+        void upgradeHitPointsOfUnit(){upgradeOfBattleUnit("hitPoints");}
+        void upgradeAttackFrequencyOfUnit(){upgradeOfBattleUnit("attackFrequency");}
 
 }

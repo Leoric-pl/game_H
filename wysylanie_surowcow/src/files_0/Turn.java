@@ -23,9 +23,29 @@ public class Turn {
     void basicTurn1(int teamIndex,int playerIndex)
     {
         if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
+        if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
         teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
         System.out.println(neutralCities.get(0).goldAmount);
         neutralCities.get(0).increaseLevelOfCity();
+    }
+    void wait(int teamIndex, int playerIndex)
+    {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
+        if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
+        teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
+        System.out.println(neutralCities.get(0).goldAmount);}
+    void give(int teamIndex, int playerIndex)
+    {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
+        if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
+        teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
+        Giving.giveGoldToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(0) ,neutralCities.get(0), 100000);
+        System.out.println(neutralCities.get(0).goldAmount);
+    System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);}
+    void upgrade(int teamIndex, int playerIndex)
+    {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
+        if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
+        teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
+        System.out.println(neutralCities.get(0).goldAmount);
+        System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());//to end
     }
 
 }
