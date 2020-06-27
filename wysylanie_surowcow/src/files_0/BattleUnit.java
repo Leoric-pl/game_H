@@ -17,7 +17,7 @@ public class BattleUnit {
     double countCostPerUnit() {
         double modifier;
         if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency()/2;
-        else modifier=
+        else modifier=(getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency();
             hireCostPerUnit = BASIC_MODIFIER * modifier;
         return hireCostPerUnit;
     }

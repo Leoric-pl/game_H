@@ -26,5 +26,6 @@ public class Player {
    //     return cities.get(indexOfCity);}
     String getName()
     {return name;}
+   // void upgradeAttackOfUnit
 
 }

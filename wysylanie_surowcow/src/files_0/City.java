@@ -1,6 +1,7 @@
 package files_0;
 
 public class City {
+    static final int MAX_LEVEL_OF_CITY=5;
     int pozX, pozY;
     int woodAmount;
     int goldAmount;
@@ -16,10 +17,14 @@ public class City {
         this.pozY = pozY;
         this.name = name;
     }
-
-    String getCityName() {
-        return name;
+    City(int pozX, int pozY) {
+        this.pozX = pozX;
+        this.pozY = pozY;
     }
+
+//    String getCityName() {
+//        return name;
+//    }
 
     void addWood(int amount) {
         woodAmount += amount;
@@ -70,7 +75,7 @@ public class City {
         this.ownerTeam = teamNumber;
     }
     void increaseLevelOfCity()
-    {if(goldAmount>=goldIncome*3)
+    {if(goldAmount>=goldIncome*3&&levelOfCity<MAX_LEVEL_OF_CITY)
     {
     goldAmount-=goldIncome*3;
     goldIncome*=2;

@@ -1,3 +1,5 @@
+
+
 STATIC MAP
 
 Na poczatku pliku znajduja sie wymiary mapy, moge zaimplementowac jedna liczbe, aby mapa zawsze byla kwadratowa...
@@ -14,17 +16,6 @@ zaimplementowac algorytm najkrotszej sciazki
 gdy obiekty sa na sasiednich pozycjach, moga sie wymieniac przedmiotami
 
 
-DYNAMIC MAP
+DYNAMIC MAP(do zrobienia)
 bez wymiarow, pola oznaczone zamkami i scianami zawsze maja pod saba 0
 pola oznaczone A-H oznaczaja pole nalezace do gracza()
-
-
-ZAMKI
-1)lista u kazdej postaci, wymagałby przy zajmowaniu resetowania wszystkiego
-2) posiada gracza jako parametr, łatwe przekazanie, ale jak właściwie przekazać gracza jako jednostke nadrzedną
-wymagane właściwości:
-posiada liste elementów, które nie są resetowalne- np nie jest usuwany i tworzony na nowo
-można mu zmienić właściciela(ogólnie)->właściciel jako parametr, wtedy jest też zmieniana drużyna
-ma jednego właściciela(w jednym momencie)->właściciel jako parametr
-potrafi "wskazać" właściciela?->w jakiej formie musiałby to być właściciel podany, żeby zamek mógł go dobrze wskazać?(drużyna_i(gracz_j))
-właścicielem jest gracz lub gracz neutralny(czy tworzenie gracza neutralnego jako gracza z bohaterami z 0punktów ruchu ma sens?)
