@@ -10,7 +10,7 @@ public class BattleUnit {
     double attackFrequency = 1.0;
     double damageReduced;
     double hitPoints = 1;
-    double cuttentHitPoints = hitPoints;
+    double currentHitPoints = hitPoints;
 
     double hireCostPerUnit = BASIC_MODIFIER;
 
@@ -106,5 +106,7 @@ public class BattleUnit {
     }
     /*********************************************hitPoints******************************************/
     double getHitPoints(){return hitPoints;}
+
+    void  incrementHitPoints(){hitPoints++;}
 
 }

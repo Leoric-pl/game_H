@@ -31,6 +31,7 @@ public class Main {
             turn.basicTurn1(1, 0);
         turn.wait(1, 0);
         turn.give(1,0);
+        turn.upgrade(1,0);
     }
 
 

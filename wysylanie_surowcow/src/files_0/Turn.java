@@ -45,7 +45,45 @@ public class Turn {
         if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
         teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
         System.out.println(neutralCities.get(0).goldAmount);
-        System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());//to end
+        System.out.println();
+        System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());
+        System.out.println("attack: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicAttack());
+        System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicDefense());
+        System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getAttackFrequency());
+        System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getHitPoints());
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackOfUnit();
+        System.out.println();
+        System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());
+        System.out.println("attack: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicAttack());
+        System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicDefense());
+        System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getAttackFrequency());
+        System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getHitPoints());
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
+        System.out.println();
+        System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());
+        System.out.println("attack: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicAttack());
+        System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicDefense());
+        System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getAttackFrequency());
+        System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getHitPoints());
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeHitPointsOfUnit();
+        System.out.println();
+        System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());
+        System.out.println("attack: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicAttack());
+        System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicDefense());
+        System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getAttackFrequency());
+        System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getHitPoints());
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeDefenseOfUnit();
+        System.out.println();
+        System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getSizeOfUnit());
+        System.out.println("attack: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicAttack());
+        System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getBasicDefense());
+        System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getAttackFrequency());
+        System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).battleUnit.getHitPoints());
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);
     }
 
 }

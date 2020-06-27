@@ -54,19 +54,18 @@ public class Hero {
         }
         return amount;
     }
-    private void upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
+    private boolean upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
     {double OldCost=battleUnit.valueOfUnit();
     double newCost=battleUnit.valueOfUpgradedUnit(param);
         int cost=(int)(newCost-OldCost);
         if(cost<=goldAmount)
-        {goldAmount-=cost;
-        battleUnit.incrementBasicAttack();}
-        else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);
+        {goldAmount-=cost; return  true;}
+        else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);return false;
         }
-        void upgradeAttackOfUnit()
-        {upgradeOfBattleUnit("attack");}
-        void upgradeDefenseOfUnit(){upgradeOfBattleUnit("defense");}
-        void upgradeHitPointsOfUnit(){upgradeOfBattleUnit("hitPoints");}
-        void upgradeAttackFrequencyOfUnit(){upgradeOfBattleUnit("attackFrequency");}
+
+        void upgradeAttackOfUnit(){if(upgradeOfBattleUnit("attack"))battleUnit.incrementBasicAttack();}
+        void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))battleUnit.incrementBasicDefense();}
+        void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))battleUnit.incrementHitPoints();}
+        void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))battleUnit.incrementAttackFrequency();}
 
 }
