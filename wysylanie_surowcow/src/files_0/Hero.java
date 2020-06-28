@@ -8,11 +8,11 @@ public class Hero {
     int pozX, pozY;
     final int maxMove=15;
     int currentMove=0;
-    BattleUnit battleUnit=new BattleUnit();
+    BattleUnit heroBattleUnit=new BattleUnit();
     Hero(int startingPozX, int startingPozY) {
         this.pozX = startingPozX;
         this.pozY = startingPozY;
-        battleUnit.setSizeOfUnit();
+        heroBattleUnit.setSizeOfUnit();
     }
 
     void addWood(int amount) {
@@ -55,17 +55,17 @@ public class Hero {
         return amount;
     }
     private boolean upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
-    {double OldCost=battleUnit.valueOfUnit();
-    double newCost=battleUnit.valueOfUpgradedUnit(param);
-        int cost=(int)(newCost-OldCost);
+    {double OldCost=heroBattleUnit.valueOfUnit();
+    double newCost=heroBattleUnit.valueOfUpgradedUnit(param);
+        int cost=(int)(newCost)-(int)(OldCost);
         if(cost<=goldAmount)
         {goldAmount-=cost; return  true;}
         else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);return false;
         }
 
-        void upgradeAttackOfUnit(){if(upgradeOfBattleUnit("attack"))battleUnit.incrementBasicAttack();}
-        void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))battleUnit.incrementBasicDefense();}
-        void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))battleUnit.incrementHitPoints();}
-        void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))battleUnit.incrementAttackFrequency();}
+        void upgradeAttackOfUnit(){if(upgradeOfBattleUnit("attack"))heroBattleUnit.incrementBasicAttack();}
+        void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))heroBattleUnit.incrementBasicDefense();}
+        void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))heroBattleUnit.incrementHitPoints();}
+        void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))heroBattleUnit.incrementAttackFrequency();}
 
 }

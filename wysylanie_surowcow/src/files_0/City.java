@@ -1,6 +1,6 @@
 package files_0;
 
-public class City {
+ class City {
     static final int MAX_LEVEL_OF_CITY=5;
     int pozX, pozY;
     int woodAmount;
@@ -10,16 +10,20 @@ public class City {
     int ownerTeam = 0;
     int ownerPlayer = 0;
     int levelOfCity=1;
+    int levelOfDfences=0;
     String name;
+    BattleUnit cityBattleUnit=new BattleUnit();
 
     City(int pozX, int pozY, String name) {
         this.pozX = pozX;
         this.pozY = pozY;
         this.name = name;
+        cityBattleUnit.setSizeOfUnit();
     }
     City(int pozX, int pozY) {
         this.pozX = pozX;
         this.pozY = pozY;
+        cityBattleUnit.setSizeOfUnit();
     }
 
 //    String getCityName() {
@@ -81,7 +85,32 @@ public class City {
     goldIncome*=2;
     levelOfCity++;
     System.out.println("increased gold income to "+goldIncome);}
-    else System.out.println("not enough gold");
+    else if(goldAmount<goldIncome*3) System.out.println("not enough gold");
+    else System.out.println("Max income level reached");
+    }
+
+    private boolean upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
+    {double OldCost=cityBattleUnit.valueOfUnit();
+        double newCost=cityBattleUnit.valueOfUpgradedUnit(param);
+        int cost=(int)(newCost)-(int)(OldCost);
+        if(cost<=goldAmount)
+        {goldAmount-=cost; return  true;}
+        else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);return false;
+    }
+
+    void upgradeAttackOfUnit(){if(upgradeOfBattleUnit("attack"))cityBattleUnit.incrementBasicAttack();}
+    void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))cityBattleUnit.incrementBasicDefense();}
+    void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))cityBattleUnit.incrementHitPoints();}
+    void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))cityBattleUnit.incrementAttackFrequency();}
+    void increaseCityDefences()
+    {if(woodAmount>=5+5*levelOfDfences)
+    {
+        woodAmount=woodAmount-(levelOfDfences+1)*5;
+        levelOfDfences++;
+        System.out.println("increased level of defences");
+    }
+    else if(woodAmount<5+5*levelOfDfences) System.out.println("not enough wood");
+    else System.out.println("Max defense level reached");
     }
     void buyUnit(){}
 

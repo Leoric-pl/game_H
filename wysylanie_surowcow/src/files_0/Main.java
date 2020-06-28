@@ -54,6 +54,7 @@ public class Main {
     test2();
     show();
     test3();
+    loop();
     }
     private static void test1() {
         int zmienna = 3;

@@ -22,8 +22,6 @@ public class Player {
         return heroes.get(indexOfHero);
     }
 
-  //  City getCity(int indexOfCity) {
-   //     return cities.get(indexOfCity);}
     String getName()
     {return name;}
 

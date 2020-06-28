@@ -2,20 +2,21 @@
 
 STATIC MAP
 
-Na poczatku pliku znajduja sie wymiary mapy, moge zaimplementowac jedna liczbe, aby mapa zawsze byla kwadratowa...
-pierwsza liczba oznacza wysokosc. druga szerokosc
-0-  puste pole,
-1- droga,modyfikatoor: 0.5
-2- przeszkoda nie do przejscia
-3- kopalnia zlota, podstawowe poza miastem zrodlo przychodu, 1000 dziannie
-4- farma, zrodlo drewna,10 dziennie
-5- kopalnia krysztalow, 1 dziennie
-100-107- symbole zamkow poczatkowych, pola pod nimi zawsze musza byc 0 lub 1 i te pola musza byc
-A-H- pozycje poczatkowe bohatrerow: NIE MA ICH NA TEJ MAPIE
-zaimplementowac algorytm najkrotszej sciazki
-gdy obiekty sa na sasiednich pozycjach, moga sie wymieniac przedmiotami
+beggining: size of map
+0-  empty
+1- road, modifier: 0.5
+2- wall
+3-gold mine, bonus income:1000 gold pieces
+4- sawmill, 10 wood per day
+5- crystal mine, 1 per day
+100-107- castle
+
+shortest way or marker to show ways
+objects near can swap resources
 
 
-DYNAMIC MAP(do zrobienia)
-bez wymiarow, pola oznaczone zamkami i scianami zawsze maja pod saba 0
-pola oznaczone A-H oznaczaja pole nalezace do gracza()
+DYNAMIC MAP(to do)
+no size, in places, where is castle or wall, must be empty
+A-H- belongs to player
+
+

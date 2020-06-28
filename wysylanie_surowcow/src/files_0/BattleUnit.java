@@ -2,12 +2,14 @@ package files_0;
 
 public class BattleUnit {
     final static double BASIC_MODIFIER = 100;
+    static int basicChanger=1;
+    static double frequencyChanger=0.125;//if cost makes problem, make it int=1
     int sizeOfUnit = 0;
     int basicAttack = 0;
     int basicDefense = 0;
     int attack = basicAttack;
     int defense = basicDefense;
-    double attackFrequency = 1.0;
+    double attackFrequency = 1.0;//if cost is problem, change it to int=1
     double damageReduced;
     double hitPoints = 1;
     double currentHitPoints = hitPoints;
@@ -19,6 +21,7 @@ public class BattleUnit {
         if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency()/2;
         else modifier=(getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency();
             hireCostPerUnit = BASIC_MODIFIER * modifier;
+            System.out.println("current cost: "+hireCostPerUnit);
         return hireCostPerUnit;
     }
     double valueOfUnit()
@@ -29,18 +32,18 @@ public class BattleUnit {
         if(param.equals("attack")||param.equals("defense"))
     {double modifier;
         if (getBasicAttack()+getBasicDefense()<1) modifier=(3+getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency()/2;
-        else modifier=(getBasicAttack()+1+getBasicDefense())*getHitPoints()*getAttackFrequency();
+        else modifier=(getBasicAttack()+basicChanger+getBasicDefense())*getHitPoints()*getAttackFrequency();
         newCost= BASIC_MODIFIER * modifier*getSizeOfUnit();}
         else if(param.equals("hitPoints"))
     {double modifier;
-        if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*(getHitPoints()+1)*getAttackFrequency()/2;
-        else modifier=(getBasicAttack()+getBasicDefense())*(getHitPoints()+1)*getAttackFrequency();
+        if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*(getHitPoints()+basicChanger)*getAttackFrequency()/2;
+        else modifier=(getBasicAttack()+getBasicDefense())*(getHitPoints()+basicChanger)*getAttackFrequency();
         newCost= BASIC_MODIFIER * modifier*getSizeOfUnit();}
         else if(param.equals("attackFrequency")) {
         double modifier;
         if (getBasicAttack() + getBasicDefense() < 2)
-            modifier = (2 + getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+0.1) / 2;
-        else modifier = (getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+0.1);
+            modifier = (2 + getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+frequencyChanger) / 2;
+        else modifier = (getBasicAttack() + getBasicDefense()) * getHitPoints() * (getAttackFrequency()+frequencyChanger);
         newCost = BASIC_MODIFIER * modifier * getSizeOfUnit();}
         return newCost;
 
@@ -58,6 +61,9 @@ public class BattleUnit {
     void incrementSizeOfUnit() {
         sizeOfUnit++;
     }
+    void decrementSizeOfUnit(int alive){
+        if(alive<sizeOfUnit&&alive>=0)
+        sizeOfUnit=alive;}
 
     /**********************************************attack******************************************************************/
     int getBasicAttack() {
@@ -102,8 +108,8 @@ public class BattleUnit {
     }
 
     void incrementAttackFrequency() {
-       attackFrequency*=10;attackFrequency++;attackFrequency/=10;
-        // attackFrequency += 0.1;
+        attackFrequency+=frequencyChanger;//if any problems, change to attackFrequency++ with 2 other fixes
+        ;
     }
     /*********************************************hitPoints******************************************/
     double getHitPoints(){return hitPoints;}
