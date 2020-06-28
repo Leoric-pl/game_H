@@ -40,43 +40,86 @@ class Turn {
         Giving.giveGoldToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(0) ,neutralCities.get(0), 100000);
         System.out.println(neutralCities.get(0).goldAmount);
     System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);}
-    void upgrade(int teamIndex, int playerIndex)
+    void upgrade0(int teamIndex, int playerIndex, int heroIndex)
     {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
         if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
-        teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
+        teams.get(teamIndex).getPlayer(playerIndex).getHero(heroIndex).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(heroIndex).maxMove;
         System.out.println(neutralCities.get(0).goldAmount);
-        showstats(teamIndex,playerIndex,0);
+        showstats(teamIndex,playerIndex,heroIndex);
 
-
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackFrequencyOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeDefenseOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeAttackOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeHitPointsOfUnit();
-        showstats(teamIndex,playerIndex,0);
-        Giving.giveGoldToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(0),neutralCities.get(0),11000);
-        showstats(teamIndex,playerIndex,0);
-        teams.get(teamIndex).players.get(playerIndex).heroes.get(0).upgradeHitPointsOfUnit();
-        showstats(teamIndex,playerIndex,0);
-
-
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeDefenseOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        Giving.giveGoldToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex),neutralCities.get(0),11000);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
     }
+    void upgrade1(int teamIndex, int playerIndex, int heroIndex)
+    {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
+        if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
+        teams.get(teamIndex).getPlayer(playerIndex).getHero(heroIndex).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(heroIndex).maxMove;
+        System.out.println(neutralCities.get(0).goldAmount);
+        showstats(teamIndex,playerIndex,heroIndex);
+
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackFrequencyOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeDefenseOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeAttackOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).upgradeHitPointsOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+        Giving.giveGoldToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex),neutralCities.get(0),11000);
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
+        showstats(teamIndex,playerIndex,heroIndex);
+    }
+    void battle()
+    {Battle battle=new Battle(teams.get(1).players.get(0).heroes.get(0),teams.get(1).players.get(0).heroes.get(1));}
     void showstats(int teamIndex, int playerIndex, int heroIndex){
         System.out.println();
         System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.getSizeOfUnit());

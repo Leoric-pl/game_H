@@ -31,7 +31,9 @@ public class Main {
             turn.basicTurn1(1, 0);
         turn.wait(1, 0);
         turn.give(1,0);
-        turn.upgrade(1,0);
+        turn.upgrade0(1,0,0);
+        turn.upgrade1(1,0,1);
+        turn.battle();
     }
 
 
@@ -61,6 +63,7 @@ public class Main {
         teams.get(1).getPlayer(0).getHero(0).addGold(zmienna * 5);
         Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 1);
         Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(1), zmienna - 1);
+        teams.get(1).getPlayer(0).getHero(1).addGold(10000);
     }
 
     private static void test2() {

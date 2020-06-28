@@ -73,10 +73,9 @@ public class BattleUnit {
     void incrementBasicAttack() {
         basicAttack++;
     }
+    void setAttack(){attack=basicAttack;}
 
-    double damageMultiplier() {
-        return 1.0 + 0.5 * attack;
-    }
+    double damageMultiplier() { return 1.0 + (0.5 * attack);}
 
     void decreaseAttack(int modifier) {
         attack -= modifier;
@@ -86,6 +85,7 @@ public class BattleUnit {
     int getBasicDefense() {
         return basicDefense;
     }
+    void setDefense(){defense=basicDefense;}
 
     void incrementBasicDefense() {
         basicDefense++;
@@ -97,8 +97,8 @@ public class BattleUnit {
     }
 
     double getDamageReduced() {
-        if (defense < 2) damageReduced = defense * 2 / 3;
-        else damageReduced = 1 / defense;
+        if (defense < 2) damageReduced = 1.0-(defense / 3.0);
+        else damageReduced = 1.0 / defense;
         return damageReduced;
     }
 

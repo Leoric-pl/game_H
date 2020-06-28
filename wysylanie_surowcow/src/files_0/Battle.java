@@ -1,45 +1,61 @@
 package files_0;
 
 public class Battle {
-    Battle(Hero heroFirst, Hero heroSecond)
+    Battle(Hero attacker, Hero defender)
     {
-        heroFirst.heroBattleUnit.currentHitPoints=heroFirst.heroBattleUnit.hitPoints;
-        double sumOfFirstHitPoints=heroFirst.heroBattleUnit.hitPoints*(heroFirst.heroBattleUnit.getSizeOfUnit()-1)+heroFirst.heroBattleUnit.currentHitPoints;
-        heroSecond.heroBattleUnit.currentHitPoints=heroSecond.heroBattleUnit.hitPoints;
-        double sumOfSecondHitPoints=heroSecond.heroBattleUnit.hitPoints*(heroSecond.heroBattleUnit.getSizeOfUnit()-1)+heroSecond.heroBattleUnit.currentHitPoints;
-        double heroFirstNextMove=1.0/heroFirst.heroBattleUnit.getAttackFrequency();
-        double heroSecondNextMove=1.0/heroSecond.heroBattleUnit.getAttackFrequency();
+        setup(attacker, defender);
+        double attackerNextMove=1.0/attacker.heroBattleUnit.getAttackFrequency();
+        double defenderNextMove=1.0/defender.heroBattleUnit.getAttackFrequency();
 
-        while(heroFirst.heroBattleUnit.getSizeOfUnit()>0&&heroSecond.heroBattleUnit.getSizeOfUnit()>0)
+        while(attacker.heroBattleUnit.getSizeOfUnit()>0&&defender.heroBattleUnit.getSizeOfUnit()>0)
     {
-        if(heroFirstNextMove<heroSecondNextMove)
-        {double damage=heroFirst.heroBattleUnit.damageMultiplier()*heroFirst.heroBattleUnit.getSizeOfUnit();
+        double sumOfFirstHitPoints=attacker.heroBattleUnit.hitPoints*(attacker.heroBattleUnit.getSizeOfUnit()-1)+attacker.heroBattleUnit.currentHitPoints;
+        double sumOfSecondHitPoints=defender.heroBattleUnit.hitPoints*(defender.heroBattleUnit.getSizeOfUnit()-1)+defender.heroBattleUnit.currentHitPoints;
+        if(attackerNextMove<defenderNextMove)
+        {
+            System.out.println("attacker makes move");
+            double damage=attacker.heroBattleUnit.damageMultiplier()*attacker.heroBattleUnit.getSizeOfUnit();
         System.out.println("potencial damage: "+damage);
-        damage=damage*heroSecond.heroBattleUnit.getDamageReduced();
+        damage=damage*defender.heroBattleUnit.getDamageReduced();
         System.out.println("final damage: "+damage);
         sumOfSecondHitPoints=sumOfSecondHitPoints-damage;
         if(sumOfSecondHitPoints<0)sumOfSecondHitPoints=0;
-        int alive=0;while(sumOfSecondHitPoints>heroSecond.heroBattleUnit.hitPoints){sumOfSecondHitPoints-=heroSecond.heroBattleUnit.hitPoints;alive++;}
-        heroSecond.heroBattleUnit.currentHitPoints=sumOfSecondHitPoints;if(heroSecond.heroBattleUnit.currentHitPoints>0)alive++;
-        heroSecond.heroBattleUnit.decrementSizeOfUnit(alive);
-        heroFirstNextMove=heroFirstNextMove+1.0/heroFirst.heroBattleUnit.getAttackFrequency();
+        int alive=0;while(sumOfSecondHitPoints>defender.heroBattleUnit.hitPoints){sumOfSecondHitPoints-=defender.heroBattleUnit.hitPoints;alive++;}
+        defender.heroBattleUnit.currentHitPoints=sumOfSecondHitPoints;if(defender.heroBattleUnit.currentHitPoints>0)alive++;
+
+        defender.heroBattleUnit.decrementSizeOfUnit(alive);
+            System.out.println("there are more units:"+alive);
+        attackerNextMove=attackerNextMove+1.0/attacker.heroBattleUnit.getAttackFrequency();
         }
-
-
-        else {double damage=heroSecond.heroBattleUnit.damageMultiplier()*heroSecond.heroBattleUnit.getSizeOfUnit();
+        else {
+            System.out.println("defender makes move");
+            double damage=defender.heroBattleUnit.damageMultiplier()*defender.heroBattleUnit.getSizeOfUnit();
             System.out.println("potencial damage: "+damage);
-            damage=damage*heroFirst.heroBattleUnit.getDamageReduced();
+            damage=damage*attacker.heroBattleUnit.getDamageReduced();
             System.out.println("final damage: "+damage);
             sumOfFirstHitPoints=sumOfFirstHitPoints-damage;
             if(sumOfFirstHitPoints<0)sumOfFirstHitPoints=0;
-            int alive=0;while(sumOfFirstHitPoints>heroFirst.heroBattleUnit.hitPoints){sumOfFirstHitPoints-=heroSecond.heroBattleUnit.hitPoints;alive++;}
-            heroFirst.heroBattleUnit.currentHitPoints=sumOfFirstHitPoints;if(heroFirst.heroBattleUnit.currentHitPoints>0)alive++;
-            heroFirst.heroBattleUnit.decrementSizeOfUnit(alive);
-            heroSecondNextMove=heroSecondNextMove+1.0/heroSecond.heroBattleUnit.getAttackFrequency();
+            int alive=0;while(sumOfFirstHitPoints>attacker.heroBattleUnit.hitPoints){sumOfFirstHitPoints-=attacker.heroBattleUnit.hitPoints;alive++;}
+            attacker.heroBattleUnit.currentHitPoints=sumOfFirstHitPoints;if(attacker.heroBattleUnit.currentHitPoints>0)alive++;
+            attacker.heroBattleUnit.decrementSizeOfUnit(alive);
+            System.out.println("there are more units:"+alive);
+            defenderNextMove=defenderNextMove+1.0/defender.heroBattleUnit.getAttackFrequency();
         }
     }
-
+        if(attacker.heroBattleUnit.getSizeOfUnit()>0)System.out.println("attacker won");
+        else System.out.println("Defender won");
     }
-
+private void setup(Hero attacker, Hero defender)
+{
+    System.out.println();
+    System.out.println("fight!");
+    System.out.println();
+    attacker.heroBattleUnit.setAttack();
+    attacker.heroBattleUnit.setDefense();
+    defender.heroBattleUnit.setDefense();
+    defender.heroBattleUnit.setAttack();
+    attacker.heroBattleUnit.currentHitPoints=attacker.heroBattleUnit.hitPoints;
+    defender.heroBattleUnit.currentHitPoints=defender.heroBattleUnit.hitPoints;
+}
 
 }
