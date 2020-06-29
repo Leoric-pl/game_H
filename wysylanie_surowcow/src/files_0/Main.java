@@ -33,7 +33,7 @@ public class Main {
         turn.give(1,0);
         turn.upgrade0(1,0,0);
         turn.upgrade1(1,0,1);
-        turn.battle();
+        turn.battle(teams.get(1).players.get(0).heroes.get(0),teams.get(1).players.get(0).heroes.get(1));
     }
 
 
@@ -71,7 +71,7 @@ public class Main {
         Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 50);
     }
     private static void show() {
-        System.out.println("bo1:" + teams.get(1).getPlayer(0).getHero(0).goldAmount);
+        System.out.println("bo1:" + teams.get(1).getPlayer(0).getHero(0).getGoldAmount());
         System.out.println("ci1:" + neutralCities.get(0).goldAmount);
         System.out.println("ci2:" + neutralCities.get(1).goldAmount);
         System.out.println();

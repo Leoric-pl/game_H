@@ -22,7 +22,9 @@ public class Battle {
         if(sumOfSecondHitPoints<0)sumOfSecondHitPoints=0;
         int alive=0;while(sumOfSecondHitPoints>defender.heroBattleUnit.hitPoints){sumOfSecondHitPoints-=defender.heroBattleUnit.hitPoints;alive++;}
         defender.heroBattleUnit.currentHitPoints=sumOfSecondHitPoints;if(defender.heroBattleUnit.currentHitPoints>0)alive++;
-
+        int valueLost=(int)((defender.heroBattleUnit.getSizeOfUnit()-alive)*defender.heroBattleUnit.countCostPerUnit());
+        attacker.addExperience(valueLost);
+            System.out.println(valueLost);
         defender.heroBattleUnit.decrementSizeOfUnit(alive);
             System.out.println("there are more units:"+alive);
         attackerNextMove=attackerNextMove+1.0/attacker.heroBattleUnit.getAttackFrequency();
@@ -37,6 +39,9 @@ public class Battle {
             if(sumOfFirstHitPoints<0)sumOfFirstHitPoints=0;
             int alive=0;while(sumOfFirstHitPoints>attacker.heroBattleUnit.hitPoints){sumOfFirstHitPoints-=attacker.heroBattleUnit.hitPoints;alive++;}
             attacker.heroBattleUnit.currentHitPoints=sumOfFirstHitPoints;if(attacker.heroBattleUnit.currentHitPoints>0)alive++;
+            int valueLost=(int)((attacker.heroBattleUnit.getSizeOfUnit()-alive)*attacker.heroBattleUnit.countCostPerUnit());
+            defender.addExperience(valueLost);
+            System.out.println(valueLost);
             attacker.heroBattleUnit.decrementSizeOfUnit(alive);
             System.out.println("there are more units:"+alive);
             defenderNextMove=defenderNextMove+1.0/defender.heroBattleUnit.getAttackFrequency();

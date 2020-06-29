@@ -39,7 +39,7 @@ class Turn {
         teams.get(teamIndex).getPlayer(playerIndex).getHero(0).currentMove=teams.get(teamIndex).getPlayer(playerIndex).getHero(0).maxMove;
         Giving.giveGoldToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(0) ,neutralCities.get(0), 100000);
         System.out.println(neutralCities.get(0).goldAmount);
-    System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).goldAmount);}
+    System.out.println(teams.get(teamIndex).players.get(playerIndex).heroes.get(0).getGoldAmount());}
     void upgrade0(int teamIndex, int playerIndex, int heroIndex)
     {if(neutralCities.get(0).ownerPlayer==playerIndex&&neutralCities.get(0).ownerTeam==teamIndex)neutralCities.get(0).goldAmount+=neutralCities.get(0).goldIncome;
         if(neutralCities.get(1).ownerPlayer==playerIndex&&neutralCities.get(1).ownerTeam==teamIndex)neutralCities.get(1).goldAmount+=neutralCities.get(1).goldIncome;
@@ -121,11 +121,20 @@ class Turn {
     void battle(Hero attacker, Hero defender)
     {
         Battle battle=new Battle();
+        int currentExpOfAttacker=attacker.getExperience();
+        int currentExpOfDefender=defender.getExperience();
     if(battle.battle(attacker, defender)==attacker)
-    { Giving.giveGoldToHero(defender,attacker,1000000000);
-        Giving.giveCrystalToHero(defender,attacker,1000000000);
-        Giving.giveWoodToHero(defender,attacker,1000000000);
-
+    { Giving.giveGoldToHero(defender,attacker,defender.getGoldAmount());
+        Giving.giveCrystalToHero(defender,attacker,defender.getCrystalAmount());
+        Giving.giveWoodToHero(defender,attacker,defender.getWoodAmount());
+        System.out.println("attacker got "+(attacker.getExperience()-currentExpOfAttacker));
+        teams.get(1).getPlayer(0).removeHero(1);
+    }
+    else { Giving.giveGoldToHero(attacker,defender,attacker.getGoldAmount());
+        Giving.giveCrystalToHero(attacker,defender,attacker.getCrystalAmount());
+        Giving.giveWoodToHero(attacker,defender,attacker.getWoodAmount());
+        System.out.println("defender got "+(defender.getExperience()-currentExpOfDefender));
+        teams.get(1).getPlayer(0).removeHero(0);
     }
     }
     void showstats(int teamIndex, int playerIndex, int heroIndex){
@@ -135,7 +144,7 @@ class Turn {
         System.out.println("defense: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.getBasicDefense());
         System.out.println("attackFrequency: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.getAttackFrequency());
         System.out.println("hitPoints: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.getHitPoints());
-        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).goldAmount);
+        System.out.println("gold: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).getGoldAmount());
     }
 
 }

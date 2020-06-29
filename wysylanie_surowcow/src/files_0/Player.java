@@ -24,6 +24,8 @@ public class Player {
 
     String getName()
     {return name;}
+    void removeHero(int heroIndex)
+    {heroes.remove(heroIndex);}
 
 
 
