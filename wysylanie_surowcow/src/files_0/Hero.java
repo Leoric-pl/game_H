@@ -6,8 +6,11 @@ public class Hero {
     int goldAmount;
     int crystalAmount;
     int pozX, pozY;
-    final int maxMove=15;
+    final int maxMove=5;
     int currentMove=0;
+    int experience=0;
+    int experienceToNextLevel=5000;
+    int heroLevel=0;
     BattleUnit heroBattleUnit=new BattleUnit();
     Hero(int startingPozX, int startingPozY) {
         this.pozX = startingPozX;
@@ -67,5 +70,8 @@ public class Hero {
         void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))heroBattleUnit.incrementBasicDefense();}
         void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))heroBattleUnit.incrementHitPoints();}
         void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))heroBattleUnit.incrementAttackFrequency();}
+
+    void addExperience(int amount){experience+=amount;
+    if(experience>=experienceToNextLevel)heroLevel++;experience-=experienceToNextLevel;experienceToNextLevel*=3;}
 
 }

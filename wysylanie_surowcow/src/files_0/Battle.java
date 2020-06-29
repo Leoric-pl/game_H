@@ -1,7 +1,7 @@
 package files_0;
 
 public class Battle {
-    Battle(Hero attacker, Hero defender)
+   Hero battle(Hero attacker, Hero defender)
     {
         setup(attacker, defender);
         double attackerNextMove=1.0/attacker.heroBattleUnit.getAttackFrequency();
@@ -42,8 +42,8 @@ public class Battle {
             defenderNextMove=defenderNextMove+1.0/defender.heroBattleUnit.getAttackFrequency();
         }
     }
-        if(attacker.heroBattleUnit.getSizeOfUnit()>0)System.out.println("attacker won");
-        else System.out.println("Defender won");
+        if(attacker.heroBattleUnit.getSizeOfUnit()>0){System.out.println("attacker won");return attacker;}
+        else System.out.println("Defender won");return defender;
     }
 private void setup(Hero attacker, Hero defender)
 {

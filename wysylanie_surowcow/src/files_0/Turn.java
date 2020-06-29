@@ -118,8 +118,16 @@ class Turn {
         teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.incrementSizeOfUnit();
         showstats(teamIndex,playerIndex,heroIndex);
     }
-    void battle()
-    {Battle battle=new Battle(teams.get(1).players.get(0).heroes.get(0),teams.get(1).players.get(0).heroes.get(1));}
+    void battle(Hero attacker, Hero defender)
+    {
+        Battle battle=new Battle();
+    if(battle.battle(attacker, defender)==attacker)
+    { Giving.giveGoldToHero(defender,attacker,1000000000);
+        Giving.giveCrystalToHero(defender,attacker,1000000000);
+        Giving.giveWoodToHero(defender,attacker,1000000000);
+
+    }
+    }
     void showstats(int teamIndex, int playerIndex, int heroIndex){
         System.out.println();
         System.out.println("size: "+teams.get(teamIndex).players.get(playerIndex).heroes.get(heroIndex).heroBattleUnit.getSizeOfUnit());
