@@ -90,7 +90,9 @@ package files_0;
     }
 
     private boolean upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
-    {double OldCost=cityBattleUnit.valueOfUnit();
+    {
+        cityBattleUnit.setHireCostPerUnit();
+        double OldCost=cityBattleUnit.valueOfUnit();
         double newCost=cityBattleUnit.valueOfUpgradedUnit(param);
         int cost=(int)(newCost)-(int)(OldCost);
         if(cost<=goldAmount)

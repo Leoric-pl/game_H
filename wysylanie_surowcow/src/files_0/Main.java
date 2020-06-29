@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
 
-    static List<City> neutralCities = new ArrayList<>();
+    static List<City> Cities = new ArrayList<>();
     static List<Team> teams = new ArrayList<>();
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -61,25 +61,25 @@ public class Main {
     private static void test1() {
         int zmienna = 3;
         teams.get(1).getPlayer(0).getHero(0).addGold(zmienna * 5);
-        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 1);
-        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(1), zmienna - 1);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), Cities.get(0), zmienna + 1);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), Cities.get(1), zmienna - 1);
         teams.get(1).getPlayer(0).getHero(1).addGold(10000);
     }
 
     private static void test2() {
         int zmienna = 3;
-        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), neutralCities.get(0), zmienna + 50);
+        Giving.giveGoldToCity(teams.get(1).getPlayer(0).getHero(0), Cities.get(0), zmienna + 50);
     }
     private static void show() {
         System.out.println("bo1:" + teams.get(1).getPlayer(0).getHero(0).getGoldAmount());
-        System.out.println("ci1:" + neutralCities.get(0).goldAmount);
-        System.out.println("ci2:" + neutralCities.get(1).goldAmount);
+        System.out.println("ci1:" + Cities.get(0).goldAmount);
+        System.out.println("ci2:" + Cities.get(1).goldAmount);
         System.out.println();
     }
     private static void test3(){
-        System.out.println(neutralCities.get(0).name);
-        System.out.println(neutralCities.get(1).name);
-        System.out.println(teams.get(neutralCities.get(0).ownerTeam).getPlayer(neutralCities.get(0).ownerPlayer).name);
-        System.out.println(teams.get(neutralCities.get(1).ownerTeam).getPlayer(neutralCities.get(1).ownerPlayer).name);
+        System.out.println(Cities.get(0).name);
+        System.out.println(Cities.get(1).name);
+        System.out.println(teams.get(Cities.get(0).ownerTeam).getPlayer(Cities.get(0).ownerPlayer).name);
+        System.out.println(teams.get(Cities.get(1).ownerTeam).getPlayer(Cities.get(1).ownerPlayer).name);
     }
 }

@@ -58,7 +58,9 @@ public class Hero {
         return amount;
     }
     private boolean upgradeOfBattleUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
-    {double OldCost=heroBattleUnit.valueOfUnit();
+    {
+        heroBattleUnit.setHireCostPerUnit();
+        double OldCost=heroBattleUnit.valueOfUnit();
     double newCost=heroBattleUnit.valueOfUpgradedUnit(param);
         int cost=(int)(newCost)-(int)(OldCost);
         if(cost<=goldAmount)

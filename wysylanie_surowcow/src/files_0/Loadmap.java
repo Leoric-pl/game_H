@@ -3,7 +3,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static files_0.Main.neutralCities;
+import static files_0.Main.Cities;
+
 
 class Loadmap {
 
@@ -50,7 +51,7 @@ private int castle7=107;
                 else if(DataToLoad==crystalMine)                           {firstmap.map[i][j]=Field.crystal_mine;}
                 else if(DataToLoad==sawmill)                                   {firstmap.map[i][j]=Field.sawmill__;}
                 else if(DataToLoad>=castle0&&DataToLoad<=castle7)         {firstmap.map[i][j]=Field.castle___;
-                neutralCities.add(new City(i,j,i+"City"+j));
+                Cities.add(new City(i,j,i+"City"+j));
                 }
             }
         }

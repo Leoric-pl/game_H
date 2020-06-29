@@ -16,16 +16,18 @@ public class BattleUnit {
 
     double hireCostPerUnit = BASIC_MODIFIER;
 
-    double countCostPerUnit() {
+    void setHireCostPerUnit() {
         double modifier;
         if (getBasicAttack()+getBasicDefense()<2) modifier=(2+getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency()/2;
         else modifier=(getBasicAttack()+getBasicDefense())*getHitPoints()*getAttackFrequency();
             hireCostPerUnit = BASIC_MODIFIER * modifier;
             System.out.println("current cost: "+hireCostPerUnit);
-        return hireCostPerUnit;
+       // return hireCostPerUnit;
     }
+    double getHireCostPerUnit(){return hireCostPerUnit;}
+
     double valueOfUnit()
-    {double valueOfUnit=countCostPerUnit()*getSizeOfUnit();
+    {double valueOfUnit=getHireCostPerUnit()*getSizeOfUnit();
     return valueOfUnit;}
     double valueOfUpgradedUnit(String param)//avaliable: attack, defense, hitPoints,attackFrequency
     {double newCost= 1000000000;
