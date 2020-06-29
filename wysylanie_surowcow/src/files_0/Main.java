@@ -23,12 +23,11 @@ public class Main {
 
         Loadmap loadmap = new Loadmap();
         loadmap.loadStatic();
+        Controller controller=new Controller();
         test3();
         Turn turn = new Turn();
-        turn.basicTurn0(1, 0);
         test();
-        for (int i = 0; i < 10; i++)
-            turn.basicTurn1(1, 0);
+        controller.loadAll(1,0);
         turn.wait(1, 0);
         turn.give(1,0);
         turn.upgrade0(1,0,0);
@@ -36,17 +35,6 @@ public class Main {
         turn.battle(teams.get(1).players.get(0).heroes.get(0),teams.get(1).players.get(0).heroes.get(1));
     }
 
-
-
-
-    private static void loop() {
-        System.out.println(teams.get(0).getPlayer(0).name);
-        System.out.println(teams.get(1).getPlayer(0).name);
-        System.out.println(teams.get(2).getPlayer(0).name);
-        System.out.println(teams.get(2).getPlayer(1).name);
-        System.out.println(teams.get(2).getPlayer(2).name);
-
-    }
     /***********************************to tests:*********************/
     private static void test()
     {
@@ -56,7 +44,6 @@ public class Main {
     test2();
     show();
     test3();
-    loop();
     }
     private static void test1() {
         int zmienna = 3;

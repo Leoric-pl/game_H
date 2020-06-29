@@ -8,7 +8,7 @@ public class Hero {
     int pozX, pozY;
     final int maxMove=5;
     int currentMove=0;
-  private   int experience=0;
+    private   int experience=0;
     int experienceToNextLevel=5000;
     private int heroLevel=1;
     BattleUnit heroBattleUnit=new BattleUnit();
