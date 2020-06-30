@@ -70,10 +70,6 @@ package files_0;
         return amount;
     }
 
-    void addPackage(int destinationTime, String kind, int value) {
-        PackageReinforce packagePlayer1 = new PackageReinforce(destinationTime, kind, value);
-    }
-
     void changeOwner(int teamNumber, int playerNumber) {
         this.ownerPlayer = playerNumber;
         this.ownerTeam = teamNumber;
@@ -99,21 +95,24 @@ package files_0;
         {goldAmount-=cost; return  true;}
         else System.out.println("Not enough money, You need "+cost+" gold and You have only "+goldAmount);return false;
     }
-
+     void increaseCityDefences()
+     {if(woodAmount>=5+5*levelOfDfences)
+     {
+         woodAmount=woodAmount-(levelOfDfences+1)*5;
+         levelOfDfences++;
+         System.out.println("increased level of defences");
+     }
+     else if(woodAmount<5+5*levelOfDfences) System.out.println("not enough wood");
+     else System.out.println("Max defense level reached");
+     }
     void upgradeAttackOfUnit(){if(upgradeOfBattleUnit("attack"))cityBattleUnit.incrementBasicAttack();}
     void upgradeDefenseOfUnit(){if(upgradeOfBattleUnit("defense"))cityBattleUnit.incrementBasicDefense();}
     void upgradeHitPointsOfUnit(){if(upgradeOfBattleUnit("hitPoints"))cityBattleUnit.incrementHitPoints();}
     void upgradeAttackFrequencyOfUnit(){if(upgradeOfBattleUnit("attackFrequency"))cityBattleUnit.incrementAttackFrequency();}
-    void increaseCityDefences()
-    {if(woodAmount>=5+5*levelOfDfences)
-    {
-        woodAmount=woodAmount-(levelOfDfences+1)*5;
-        levelOfDfences++;
-        System.out.println("increased level of defences");
-    }
-    else if(woodAmount<5+5*levelOfDfences) System.out.println("not enough wood");
-    else System.out.println("Max defense level reached");
-    }
+
     void buyUnit(){}
+     void addPackage(int destinationTime, String kind, int value) {
+         PackageReinforce packagePlayer1 = new PackageReinforce(destinationTime, kind, value);
+     }
 
 }

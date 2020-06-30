@@ -32,8 +32,8 @@ private int castle7=107;
     void loadStatic() throws FileNotFoundException {
     File sataticMap = new File("src\\files_0\\static_map_int.txt");
   //  File dynamicMap = new File("src\\files_0\\dynamic_map.txt");
+        //  Scanner actual=new Scanner(dynamicMap);
         Scanner basic = new Scanner(sataticMap);
-      //  Scanner actual=new Scanner(dynamicMap);
         HEIGHT = basic.nextInt();
         WIDTH = basic.nextInt();
         Map firstmap=new Map();
