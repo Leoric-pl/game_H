@@ -4,9 +4,14 @@ import static files_0.Main.Cities;
 import static files_0.Main.teams;
 
 class Turn {
+    void showCity(int teamIndex, int playerIndex, int cityIndex)
+    {
+        System.out.println("command done correctly");
+        System.out.println(teamIndex);
+        System.out.println(playerIndex);
+        System.out.println(cityIndex);
 
-
-
+    }
 /*******************************************************testy**************************************************************/
    void basicTurn0(int teamIndex,int playerIndex)
     {
