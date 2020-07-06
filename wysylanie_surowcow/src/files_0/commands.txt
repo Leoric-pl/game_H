@@ -1,0 +1,17 @@
+construction of commands: words/numbers
+
+word 0: city/hero->point category of target
+
+
+word 1: number-> point single hero or city
+
+
+word 2: give/ upgrade/ show-> first part of command
+
+give: to give sources, next word: source(gold/Gold/GOLD     wood/Wood/WOOD      crystal/Crystal/CRYSTAL)
+if want, can give "to" as optional word,after source, next is target of giving: hero/city
+next is index of taker, the last word is amount of source
+
+upgrade:
+
+show: allows to show stats

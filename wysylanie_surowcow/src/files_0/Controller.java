@@ -15,47 +15,81 @@ public class Controller {
         while(numberOfCommands>0){
             numberOfCommands--;String command=textInput.nextLine();
             String[] splitCommand=command.split(" ");
-            if(splitCommand[0].equals("ba0"))turn.basicTurn0(teamIndex,playerIndex);
-            else if(splitCommand[0].equals("ba1")) turn.basicTurn1(teamIndex, playerIndex);
-            else if(splitCommand[0].equals("city")){
-                int cityIndex=parseInt(splitCommand[1]);
-                if(splitCommand[2].equals("upgrade")) {
-                    if (splitCommand[3].equals("unit")) {
-                        switch (splitCommand[4]) {
-                            case "attack":
-                                Cities.get(cityIndex).upgradeAttackOfUnit();
+            switch (splitCommand[0]) {
+                case "ba0":
+                    turn.basicTurn0(teamIndex, playerIndex);
+                    break;
+                case "ba1":
+                    turn.basicTurn1(teamIndex, playerIndex);
+                    break;
+                case "city":
+                    int cityIndex = parseInt(splitCommand[1]);
+                    if (splitCommand[2].equals("upgrade")) {
+                        switch (splitCommand[3]) {
+                            case "unit":
+                                switch (splitCommand[4]) {
+                                    case "attack":
+                                        Cities.get(cityIndex).upgradeAttackOfUnit();
+                                        break;
+                                    case "defense":
+                                        Cities.get(cityIndex).upgradeDefenseOfUnit();
+                                        break;
+                                    case "frequency":
+                                        Cities.get(cityIndex).upgradeAttackFrequencyOfUnit();
+                                        break;
+                                    case "hp":
+                                        Cities.get(cityIndex).upgradeHitPointsOfUnit();
+                                        break;
+                                }
+                                break;
+                            case "income":
+                                Cities.get(0).increaseLevelOfCity();
                                 break;
                             case "defense":
-                                Cities.get(cityIndex).upgradeDefenseOfUnit();
-                                break;
-                            case "frequency":
-                                Cities.get(cityIndex).upgradeAttackFrequencyOfUnit();
-                                break;
-                            case "hp":
-                                Cities.get(cityIndex).upgradeHitPointsOfUnit();
+                                Cities.get(0).increaseCityDefences();
                                 break;
                         }
-                    } else if (splitCommand[3].equals("income")) Cities.get(0).increaseLevelOfCity();
-                    else if (splitCommand[3].equals("defense")) Cities.get(0).increaseCityDefences();
-                }
-                else if(splitCommand[2].equals("show")) turn.showCity(teamIndex,playerIndex,cityIndex);
-            else if(splitCommand[3].equals("give"))
-                {if(splitCommand[4].equals("gold"))
-                if(splitCommand[5].equals("to")||splitCommand.equals("(to)"))
-                loadTaker(teamIndex, playerIndex, splitCommand,6,"gold");
-                else loadTaker(teamIndex, playerIndex, splitCommand,5,"gold");
-                }
+                    } else if (splitCommand[2].equals("show")) turn.showCity(teamIndex, playerIndex, cityIndex);
+                    else if (splitCommand[3].equals("give")) {
+                            if (splitCommand[5].equals("to") || splitCommand.equals("(to)"))
+                                loadCityTaker(teamIndex, playerIndex, splitCommand, 6, splitCommand[4]);
+                            else loadCityTaker(teamIndex, playerIndex, splitCommand, 5, splitCommand[4]);
+                    }
+                    break;
             }
 
 
         }
     }
-    void loadTaker( int teamIndex,int playerIndex, String[] splitCommand, int startingIndex, String source)
+ private void loadCityTaker( int teamIndex,int playerIndex, String[] splitCommand, int startingIndex, String source)
     {
-        if(splitCommand[startingIndex].equals("hero"))
-        {if(source.equals("gold"))Giving.giveGoldToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex+1])), Cities.get(parseInt(splitCommand[1])),parseInt(splitCommand[startingIndex+2]));
-           else if(source.equals("wood"))Giving.giveWoodToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex+1])), Cities.get(parseInt(splitCommand[1])),parseInt(splitCommand[startingIndex+2]));
-           else if(source.equals("crystal"))Giving.giveCrystalToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex+1])), Cities.get(parseInt(splitCommand[1])),parseInt(splitCommand[startingIndex+2]));
+        switch (splitCommand[startingIndex]) {
+            case "hero": case "Hero": case "HERO":
+                switch (source) {
+                    case "gold": case  "Gold": case "GOLD":
+                        Giving.giveGoldToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                    case "wood": case "Wood": case "WOOD":
+                        Giving.giveWoodToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                    case "crystal": case "Crystal": case "CRYSTAL":
+                        Giving.giveCrystalToHero(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                }
+                break;
+            case "city": case "City": case "CITY":
+                switch (source) {
+                    case "gold": case  "Gold": case "GOLD":
+                        Giving.giveGoldToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                    case "wood": case "Wood": case "WOOD":
+                        Giving.giveWoodToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                    case "crystal": case "Crystal": case "CRYSTAL":
+                        Giving.giveCrystalToCity(teams.get(teamIndex).players.get(playerIndex).heroes.get(parseInt(splitCommand[startingIndex + 1])), Cities.get(parseInt(splitCommand[1])), parseInt(splitCommand[startingIndex + 2]));
+                        break;
+                }
+                break;
         }
     }
 }
