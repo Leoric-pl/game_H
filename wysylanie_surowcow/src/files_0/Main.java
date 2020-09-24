@@ -9,6 +9,8 @@ public class Main {
     static List<City> Cities = new ArrayList<>();
     static List<Team> teams = new ArrayList<>();
 
+
+
     public static void main(String[] args) throws FileNotFoundException {
         teams.add(new Team("Neutral"));
         teams.add(new Team("Red"));
@@ -26,8 +28,13 @@ public class Main {
         Controller controller=new Controller();
         test3();
         Turn turn = new Turn();
-        test();
+        test();int i=0;
+        while(i<5){
         controller.loadAll(1,0);
+        controller.loadAll(2,0);
+        controller.loadAll(2,1);
+        controller.loadAll(2,2);
+        i++;}
         turn.wait(1, 0);
         turn.give(1,0);
         turn.upgrade0(1,0,0);
